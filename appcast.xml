@@ -12,7 +12,7 @@
             <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://noki-app.github.io/downloads/Noki-0.1.2.zip" length="3071863" type="application/octet-stream" sparkle:edSignature="4OkLQzzRIK26irBfQ9wdFt6Z7MayoEH4dwkyd77a7GylFBb8uiOJqB9cx5yJWnMmmVxNfshnH8HREw2cglTACA=="/>
+            <enclosure url="https://github.com/noki-app/noki-app.github.io/releases/download/mac-0.1.2/Noki-0.1.2.zip" length="3071863" type="application/octet-stream" sparkle:edSignature="4OkLQzzRIK26irBfQ9wdFt6Z7MayoEH4dwkyd77a7GylFBb8uiOJqB9cx5yJWnMmmVxNfshnH8HREw2cglTACA=="/>
         </item>
     </channel>
 </rss>

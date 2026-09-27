@@ -1,0 +1,325 @@
+:root {
+  --ink: #f4f4f5;
+  --ink-dim: #a0a0a8;
+  --ink-faint: #6f6f78;
+  --bg: #0a0a0b;
+  --bg-alt: #121214;
+  --line: rgba(255, 255, 255, 0.09);
+  --accent: #2f7cf6;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 { line-height: 1.35; letter-spacing: 0.01em; }
+
+p { margin: 0 0 1em; }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 96px 0 0;
+  background:
+    radial-gradient(1100px 520px at 50% -140px, rgba(47, 124, 246, 0.20), transparent 70%),
+    var(--bg);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 24px;
+  font-size: clamp(30px, 6.4vw, 62px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  color: var(--ink-dim);
+}
+
+.cta { margin-bottom: 64px; }
+
+.button {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 15px 44px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.button:hover { background: #2569d6; transform: translateY(-1px); }
+.button:active { transform: translateY(0); }
+
+/* Shown instead of the button until the zip is actually there to download. */
+.button-soon,
+.button-soon:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink-dim);
+  cursor: default;
+  transform: none;
+}
+
+/* The second download on the page, so it does not compete with the first. */
+.button-quiet { background: rgba(255, 255, 255, 0.1); }
+.button-quiet:hover { background: rgba(255, 255, 255, 0.14); }
+
+.button-note {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.8;
+  letter-spacing: 0.04em;
+}
+
+.cta-note {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--ink-faint);
+}
+
+/* The screenshot hangs off the bottom of the hero, the way the notch hangs off the top of a screen. */
+.shot {
+  margin: 0;
+  padding: 0 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 22px 22px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+}
+
+/* ---------- Sections ---------- */
+
+.section { padding: 88px 0; }
+
+.section-alt { background: var(--bg-alt); }
+
+.section h2 {
+  margin: 0 0 40px;
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.card p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-dim);
+}
+
+.section-body {
+  max-width: 640px;
+  margin: 0 0 28px;
+  color: var(--ink-dim);
+}
+
+.win-note { margin-top: 16px; }
+
+/* ---------- Desktop toggle ---------- */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.split h2 { margin-bottom: 20px; }
+.split p { color: var(--ink-dim); margin: 0; }
+
+.icon-shot { margin: 0; }
+
+.icon-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.icon-shot figcaption {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+/* ---------- Steps ---------- */
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: 28px;
+}
+
+.steps li {
+  counter-increment: step;
+  padding-left: 52px;
+  position: relative;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.steps h3 { margin: 0 0 6px; font-size: 17px; font-weight: 650; }
+.steps p { margin: 0; font-size: 15px; color: var(--ink-dim); }
+.steps strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- Specs ---------- */
+
+.specs {
+  margin: 0 0 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0 32px;
+}
+
+.specs > div {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.specs dt { width: 84px; flex: none; color: var(--ink-faint); font-size: 15px; }
+.specs dd { margin: 0; font-size: 15px; }
+
+.fineprint {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-faint);
+  max-width: 640px;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 56px 0 72px;
+  border-top: 1px solid var(--line);
+}
+
+.mark { margin: 0 0 4px; font-size: 18px; font-weight: 650; }
+.small { margin: 0; font-size: 13px; color: var(--ink-faint); }
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .hero h1 { font-size: 32px; }
+  .lede { margin-bottom: 32px; }
+  .hero { padding-top: 64px; }
+  .section { padding: 64px 0; }
+  .split { grid-template-columns: 1fr; gap: 32px; }
+  .shot { padding: 0 16px; }
+  .wrap { padding: 0 20px; }
+}
+
+/* ---------- Icons (Lucide) ---------- */
+
+.sprite { display: none; }
+
+.icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-bottom: 14px;
+  color: var(--ink-faint);
+}
+
+.split .icon { margin-bottom: 18px; }
+
+/* ---------- Language bar ---------- */
+
+.langbar {
+  padding: 16px 0 0;
+  font-size: 13px;
+}
+
+.langbar .wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.langbar a {
+  padding: 5px 11px;
+  border-radius: 8px;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color 0.12s ease, background 0.12s ease;
+}
+
+.langbar a:hover { color: var(--ink); background: rgba(255, 255, 255, 0.06); }
+.langbar a[aria-current] { color: var(--ink); background: rgba(255, 255, 255, 0.08); }
+
+.langbar + .hero { padding-top: 56px; }

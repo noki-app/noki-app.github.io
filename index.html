@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noki — MacBook のノッチを、使える場所に</title>
+<meta name="description" content="音楽、カレンダー、翻訳、メモ、ファイルの一時置き場。MacBook のノッチにまとめておける macOS アプリです。">
+<meta property="og:title" content="Noki — MacBook のノッチを、使える場所に">
+<meta property="og:description" content="音楽、カレンダー、翻訳、メモ、ファイルの一時置き場。MacBook のノッチにまとめておける macOS アプリです。">
+<meta property="og:image" content="https://noki-app.github.io/img/card.jpg">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="ja" href="https://noki-app.github.io/">
+<link rel="alternate" hreflang="en" href="https://noki-app.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://noki-app.github.io/">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Lucide (ISC). Inline so the page needs no extra request. -->
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13" /> <circle cx="6" cy="18" r="3" /> <circle cx="18" cy="16" r="3" /></symbol>
+  <symbol id="i-calendar-days" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /> <path d="M8 13h.01" /> <path d="M12 13h.01" /> <path d="M16 13h.01" /> <path d="M8 17h.01" /> <path d="M12 17h.01" /> <path d="M16 17h.01" /></symbol>
+  <symbol id="i-languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6" /> <path d="m4 14 6-6 2-3" /> <path d="M2 5h12" /> <path d="M7 2h1" /> <path d="m22 22-5-10-5 10" /> <path d="M14 18h6" /></symbol>
+  <symbol id="i-notebook-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4" /> <path d="M2 6h4" /> <path d="M2 10h4" /> <path d="M2 14h4" /> <path d="M2 18h4" /> <path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /></symbol>
+  <symbol id="i-layout-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /> <rect width="7" height="7" x="3" y="14" rx="1" /></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></symbol>
+  <symbol id="i-monitor-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v4" /> <path d="M17 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 1.184-1.826" /> <path d="m2 2 20 20" /> <path d="M8 21h8" /> <path d="M8.656 3H20a2 2 0 0 1 2 2v10a2 2 0 0 1-.293 1.042" /></symbol>
+</svg>
+
+<nav class="langbar" aria-label="言語">
+  <div class="wrap"><a href="/" hreflang="ja" aria-current="true">日本語</a>
+    <a href="/en/" hreflang="en">English</a></div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">macOS 14 以降 / Apple Silicon</p>
+    <h1>ノッチを、<br>使える場所にする。</h1>
+    <p class="lede">MacBook の上にある黒い部分。Noki はそこを開いて、いま流れている曲、今日の予定、翻訳、メモ、ファイルの一時置き場をまとめて出します。</p>
+
+    <div class="cta">
+      
+      <a class="button" href="downloads/Noki-0.1.0.zip" download>
+        ダウンロード
+        <span class="button-note">無料 / 0.1.0</span>
+      </a>
+      <p class="cta-note">ダウンロードしたら、Noki を「アプリケーション」フォルダに入れて開いてください。</p>
+      
+      
+    </div>
+  </div>
+
+  <figure class="shot">
+    <img src="img/card.jpg" alt="ノッチを開いたところ。左に音楽プレイヤー、その横にカレンダーと翻訳、右端にファイルトレイのボタンが並んでいる。" width="1375" height="326" fetchpriority="high" decoding="async">
+  </figure>
+</header>
+
+<main>
+
+<section class="section">
+  <div class="wrap">
+    <h2>できること</h2>
+    <div class="grid">
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-music"/></svg>
+        <h3>音楽</h3>
+        <p>再生中の曲が、ノッチの左右にジャケットと波形で出ます。波形を押すだけで一時停止と再開。ミュージックや Spotify のほか、ブラウザで鳴らしている音にも対応します。</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-calendar-days"/></svg>
+        <h3>カレンダー</h3>
+        <p>今週の日付と、その日の予定。二本指で前後2週間までめくれて、予定が多い日は縦にスクロールできます。</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg>
+        <h3>翻訳</h3>
+        <p>打ちこんだ文をその場で訳します。どちら側にも入力できて、入れかえもワンタップ。翻訳は macOS が端末の中で行うので、文章はどこにも送られません。</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-notebook-pen"/></svg>
+        <h3>メモ</h3>
+        <p>思いついたことをその場で書きとめておけます。入力はすぐ保存され、書いている間はノッチが閉じません。</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-layout-grid"/></svg>
+        <h3>ショートカット</h3>
+        <p>よく使うアプリやファイルをドロップすると、タイルになって並びます。ショートカット App に登録したものも呼び出せます。</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-inbox"/></svg>
+        <h3>ファイルトレイ</h3>
+        <p>ノッチにファイルをドラッグすると、そこに置いておけます。AirDrop で送るのも、別の場所へ移すのもそのまま。</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap split">
+    <div>
+      <svg class="icon" aria-hidden="true"><use href="#i-monitor-off"/></svg>
+      <h2>デスクトップを、一瞬で隠す</h2>
+      <p>メニューバーのアイコンを押すだけで、デスクトップに散らかったアイコンが消えます。画面を共有する前や、人に見せるときに。もう一度押せば戻ります。ファイルは消えません。</p>
+    </div>
+    <figure class="icon-shot">
+      <img src="img/desktop-icon.png" alt="メニューバーのアイコン。左が通常時、右はデスクトップのアイコンを隠しているとき（中の点が薄くなる）。" width="936" height="516" loading="lazy" decoding="async">
+      <figcaption>左が表示中、右が隠しているとき</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>はじめて開くとき</h2>
+    <ol class="steps">
+      <li>
+        <h3>アプリケーションフォルダに入れる</h3>
+        <p>ダウンロードした Noki を「アプリケーション」に移してから開いてください。</p>
+      </li>
+      <li>
+        <h3>許可を2つ入れる</h3>
+        <p><strong>アクセシビリティ</strong>（音量・明るさの表示と、メディアキーを使うため）と<strong>カレンダー</strong>（予定を出すため）。設定画面の「許可する」ボタンから入れられます。使わない機能の許可は入れなくても構いません。</p>
+      </li>
+      <li>
+        <h3>ノッチに当ててみる</h3>
+        <p>開き方は「当てるだけ」と「クリック」から選べます。設定は、ノッチを右クリックすると出てきます。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <h2>必要なもの</h2>
+    <dl class="specs">
+      <div><dt>macOS</dt><dd>14 (Sonoma) 以降</dd></div>
+      <div><dt>Mac</dt><dd>Apple Silicon（M1 以降）</dd></div>
+      <div><dt>ノッチ</dt><dd>なくても動きます。画面の上端に出ます。</dd></div>
+      <div><dt>料金</dt><dd>現在は無料</dd></div>
+    </dl>
+    <p class="fineprint">Noki は Apple の公証（notarization）を受けたアプリです。曲の情報とカレンダーはこの Mac の中だけで扱い、外部に送信しません。アップデートが出たときは、アプリが自分で知らせます。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Windows 版</h2>
+    <p class="section-body">Windows のパソコンでも、画面の上の真ん中に同じノッチが出ます。使えるのは音楽・メモ・デスクトップを隠す機能です。カレンダー・翻訳・ショートカット・ファイルトレイは、今のところ Mac 版だけです。</p>
+    <dl class="specs">
+      <div><dt>Windows</dt><dd>10（バージョン 2004 以降）/ 11、64 ビット</dd></div>
+      <div><dt>料金</dt><dd>現在は無料</dd></div>
+    </dl>
+    
+    <a class="button button-quiet" href="downloads/Noki-Windows-0.1.2.zip" download>
+      Windows 版をダウンロード
+      <span class="button-note">無料 / 0.1.2</span>
+    </a>
+    <p class="fineprint win-note">はじめて開くときに「Windows によって PC が保護されました」と出たら、「詳細情報」→「実行」を押してください。</p>
+    
+    
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="mark">Noki</p>
+    <p class="small">軒 — 屋根の、外に張り出した部分。</p>
+  </div>
+</footer>
+
+</body>
+</html>

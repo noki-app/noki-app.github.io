@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noki — put the notch to work</title>
+<meta name="description" content="Music, calendar, translation, notes and a place to park files. A macOS app that keeps them all in the MacBook notch.">
+<meta property="og:title" content="Noki — put the notch to work">
+<meta property="og:description" content="Music, calendar, translation, notes and a place to park files. A macOS app that keeps them all in the MacBook notch.">
+<meta property="og:image" content="https://noki-app.github.io/img/card.jpg">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="ja" href="https://noki-app.github.io/">
+<link rel="alternate" hreflang="en" href="https://noki-app.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://noki-app.github.io/">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- Lucide (ISC). Inline so the page needs no extra request. -->
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13" /> <circle cx="6" cy="18" r="3" /> <circle cx="18" cy="16" r="3" /></symbol>
+  <symbol id="i-calendar-days" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /> <path d="M8 13h.01" /> <path d="M12 13h.01" /> <path d="M16 13h.01" /> <path d="M8 17h.01" /> <path d="M12 17h.01" /> <path d="M16 17h.01" /></symbol>
+  <symbol id="i-languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6" /> <path d="m4 14 6-6 2-3" /> <path d="M2 5h12" /> <path d="M7 2h1" /> <path d="m22 22-5-10-5 10" /> <path d="M14 18h6" /></symbol>
+  <symbol id="i-notebook-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4" /> <path d="M2 6h4" /> <path d="M2 10h4" /> <path d="M2 14h4" /> <path d="M2 18h4" /> <path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /></symbol>
+  <symbol id="i-layout-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /> <rect width="7" height="7" x="3" y="14" rx="1" /></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></symbol>
+  <symbol id="i-monitor-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v4" /> <path d="M17 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 1.184-1.826" /> <path d="m2 2 20 20" /> <path d="M8 21h8" /> <path d="M8.656 3H20a2 2 0 0 1 2 2v10a2 2 0 0 1-.293 1.042" /></symbol>
+</svg>
+
+<nav class="langbar" aria-label="Language">
+  <div class="wrap"><a href="/" hreflang="ja">日本語</a>
+    <a href="/en/" hreflang="en" aria-current="true">English</a></div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">macOS 14+ / Apple Silicon</p>
+    <h1>Put the notch<br>to work.</h1>
+    <p class="lede">That black strip at the top of your MacBook. Noki opens it up and keeps what's playing, what's on today, translation, notes and a place to park files all in one spot.</p>
+
+    <div class="cta">
+      
+      <a class="button" href="../downloads/Noki-0.1.0.zip" download>
+        Download
+        <span class="button-note">Free / 0.1.0</span>
+      </a>
+      <p class="cta-note">Once it downloads, move Noki into your Applications folder and open it.</p>
+      
+      
+    </div>
+  </div>
+
+  <figure class="shot">
+    <img src="../img/card.jpg" alt="The notch, opened. A music player on the left, then the calendar and translation, with the file tray buttons down the right edge." width="1375" height="326" fetchpriority="high" decoding="async">
+  </figure>
+</header>
+
+<main>
+
+<section class="section">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <div class="grid">
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-music"/></svg>
+        <h3>Music</h3>
+        <p>What's playing shows up either side of the notch, with the artwork and a waveform. Press the waveform to pause and start again. Works with Music, Spotify and anything playing in a browser.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-calendar-days"/></svg>
+        <h3>Calendar</h3>
+        <p>This week's dates and what's on that day. Swipe two fingers to move up to two weeks either way, and scroll a busy day.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg>
+        <h3>Translation</h3>
+        <p>Type and it translates as you go. Either side takes typing, and one tap swaps them. macOS does the translating on the device, so nothing you type leaves your Mac.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-notebook-pen"/></svg>
+        <h3>Notes</h3>
+        <p>Write down whatever just came to mind. It saves as you type, and the notch stays open while you write.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-layout-grid"/></svg>
+        <h3>Shortcuts</h3>
+        <p>Drop in the apps and files you reach for often and they become tiles. Anything in the Shortcuts app can go there too.</p>
+      </article>
+
+      <article class="card">
+        <svg class="icon" aria-hidden="true"><use href="#i-inbox"/></svg>
+        <h3>File tray</h3>
+        <p>Drag a file onto the notch and it waits there. Send it on with AirDrop, or drag it wherever it needs to go.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap split">
+    <div>
+      <svg class="icon" aria-hidden="true"><use href="#i-monitor-off"/></svg>
+      <h2>Clear the desktop in one press</h2>
+      <p>One press on the menu bar icon and the clutter on your desktop disappears. Handy before you share your screen or hand your Mac to someone. Press again and it's back. Nothing is deleted.</p>
+    </div>
+    <figure class="icon-shot">
+      <img src="../img/desktop-icon.png" alt="The menu bar icon. On the left, normal; on the right, while the desktop icons are hidden — the dots inside fade out." width="936" height="516" loading="lazy" decoding="async">
+      <figcaption>Left: showing. Right: hidden.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>The first time you open it</h2>
+    <ol class="steps">
+      <li>
+        <h3>Put it in Applications</h3>
+        <p>Move the downloaded Noki into your Applications folder before you open it.</p>
+      </li>
+      <li>
+        <h3>Grant two permissions</h3>
+        <p><strong>Accessibility</strong> (to show volume and brightness, and to use the media keys) and <strong>Calendar</strong> (to show what's on). Both have a Grant button in the settings window. Skip the ones for features you won't use.</p>
+      </li>
+      <li>
+        <h3>Point at the notch</h3>
+        <p>It can open on hover or on a click — your choice. Right-click the notch to reach the settings.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <h2>What you need</h2>
+    <dl class="specs">
+      <div><dt>macOS</dt><dd>14 (Sonoma) or later</dd></div>
+      <div><dt>Mac</dt><dd>Apple Silicon (M1 or later)</dd></div>
+      <div><dt>A notch</dt><dd>Not required. Without one it sits at the top edge.</dd></div>
+      <div><dt>Price</dt><dd>Free for now</dd></div>
+    </dl>
+    <p class="fineprint">Noki is notarised by Apple. What's playing and what's on your calendar are handled on this Mac and never sent anywhere. When a new version is out, the app tells you itself.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>For Windows</h2>
+    <p class="section-body">On a Windows PC the same notch sits at the top centre of the screen. It has music, notes and the desktop toggle; the calendar, translation, shortcuts and file tray are Mac-only for now.</p>
+    <dl class="specs">
+      <div><dt>Windows</dt><dd>10 (version 2004 or later) or 11, 64-bit</dd></div>
+      <div><dt>Price</dt><dd>Free for now</dd></div>
+    </dl>
+    
+    <a class="button button-quiet" href="../downloads/Noki-Windows-0.1.2.zip" download>
+      Download for Windows
+      <span class="button-note">Free / 0.1.2</span>
+    </a>
+    <p class="fineprint win-note">If Windows says it protected your PC the first time you open it, choose More info, then Run anyway.</p>
+    
+    
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="mark">Noki</p>
+    <p class="small">Noki (軒) — the eaves: the part of a roof that reaches out past the wall.</p>
+  </div>
+</footer>
+
+</body>
+</html>

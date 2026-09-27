@@ -3,179 +3,286 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Noki — put the notch to work</title>
-<meta name="description" content="Music, calendar, translation, notes and a place to park files. A macOS app that keeps them all in the MacBook notch.">
-<meta property="og:title" content="Noki — put the notch to work">
-<meta property="og:description" content="Music, calendar, translation, notes and a place to park files. A macOS app that keeps them all in the MacBook notch.">
-<meta property="og:image" content="https://noki-app.github.io/img/card.jpg">
+<title>Noki: put the MacBook notch to work</title>
+<meta name="description" content="What's playing, today's plans, translation and notes, kept in the MacBook notch. A free app, with a Windows version too.">
+<meta name="theme-color" content="#ECE9EF">
+<meta property="og:title" content="Noki: put the MacBook notch to work">
+<meta property="og:description" content="What's playing, today's plans, translation and notes, kept in the MacBook notch. A free app, with a Windows version too.">
+<meta property="og:image" content="https://noki-app.github.io/assets/card.jpg">
+<meta property="og:url" content="https://noki-app.github.io/en/">
 <meta property="og:type" content="website">
 <link rel="alternate" hreflang="ja" href="https://noki-app.github.io/">
 <link rel="alternate" hreflang="en" href="https://noki-app.github.io/en/">
 <link rel="alternate" hreflang="x-default" href="https://noki-app.github.io/">
 <link rel="icon" type="image/png" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500&family=IBM+Plex+Mono&display=swap">
 <link rel="stylesheet" href="../style.css">
+<script src="../assets/app.js" defer></script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- Lucide (ISC). Inline so the page needs no extra request. -->
+<!-- Lucide (ISC), inline so the page needs no extra request. -->
 <svg class="sprite" aria-hidden="true">
   <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13" /> <circle cx="6" cy="18" r="3" /> <circle cx="18" cy="16" r="3" /></symbol>
   <symbol id="i-calendar-days" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /> <path d="M8 13h.01" /> <path d="M12 13h.01" /> <path d="M16 13h.01" /> <path d="M8 17h.01" /> <path d="M12 17h.01" /> <path d="M16 17h.01" /></symbol>
   <symbol id="i-languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6" /> <path d="m4 14 6-6 2-3" /> <path d="M2 5h12" /> <path d="M7 2h1" /> <path d="m22 22-5-10-5 10" /> <path d="M14 18h6" /></symbol>
-  <symbol id="i-notebook-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4" /> <path d="M2 6h4" /> <path d="M2 10h4" /> <path d="M2 14h4" /> <path d="M2 18h4" /> <path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /></symbol>
-  <symbol id="i-layout-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /> <rect width="7" height="7" x="3" y="14" rx="1" /></symbol>
   <symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></symbol>
   <symbol id="i-monitor-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v4" /> <path d="M17 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 1.184-1.826" /> <path d="m2 2 20 20" /> <path d="M8 21h8" /> <path d="M8.656 3H20a2 2 0 0 1 2 2v10a2 2 0 0 1-.293 1.042" /></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" /></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2" /> <line x1="8" x2="16" y1="21" y2="21" /> <line x1="12" x2="12" y1="17" y2="21" /></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /> <polyline points="7 10 12 15 17 10" /> <line x1="12" x2="12" y1="15" y2="3" /></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol>
 </svg>
 
-<nav class="langbar" aria-label="Language">
-  <div class="wrap"><a href="/" hreflang="ja">日本語</a>
-    <a href="/en/" hreflang="en" aria-current="true">English</a></div>
+<!-- The one environment: the wallpaper's beige and lavender, drifting very slowly behind everything. -->
+<div class="env" aria-hidden="true"><i class="env-warm"></i><i class="env-cool"></i></div>
+
+<!-- The signature: the page's menu is a notch. It opens the way Noki does. -->
+<nav class="notch" aria-label="Menu">
+  <div class="notch-panel" aria-hidden="true"></div>
+  <button class="notch-face" type="button" aria-expanded="false" aria-controls="notch-menu">
+    <img src="../img/icon.png" alt="" width="18" height="18">
+    <span class="notch-name">Noki</span>
+    <span class="sr-only">Open the menu</span>
+  </button>
+  <div class="notch-menu" id="notch-menu">
+    <a href="#features">What it does</a>
+    <a href="#try">Try it</a>
+    <a href="#faq">Questions</a>
+    <span class="notch-langs" aria-label="Language"><a href="/" hreflang="ja">日本語</a>
+    <a href="/en/" hreflang="en" aria-current="true">English</a></span>
+    <a class="notch-dl" href="#download">Download</a>
+  </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">macOS 14+ / Apple Silicon</p>
-    <h1>Put the notch<br>to work.</h1>
-    <p class="lede">That black strip at the top of your MacBook. Noki opens it up and keeps what's playing, what's on today, translation, notes and a place to park files all in one spot.</p>
+<main id="main" tabindex="-1">
 
-    <div class="cta">
-      
-      <a class="button" href="../downloads/Noki-0.1.2.zip" download>
-        Download
-        <span class="button-note">Free / 0.1.2</span>
-      </a>
-      <p class="cta-note">Once it downloads, move Noki into your Applications folder and open it.</p>
-      
-      
+<!-- The scroll journey: the real recording of Noki, scrubbed by scroll, pushing into the notch
+     and back out. Laptops and desktops only; everyone else gets .hero-static below. -->
+<section class="hero" aria-label="Put the notch to work.">
+  <div class="stage">
+    <div class="screen" aria-hidden="true">
+      <div class="poster"></div>
+      <video id="hero-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+      <div class="scrim"></div>
+      <div class="shade1"></div>
     </div>
-  </div>
+    <div class="scrim-zoom" aria-hidden="true"></div>
 
-  <figure class="shot">
-    <img src="../img/card.jpg" alt="The notch, opened. A music player on the left, then the calendar and translation, with the file tray buttons down the right edge." width="1375" height="326" fetchpriority="high" decoding="async">
+    <div class="band e-rise" data-a="0" data-b="0.19" data-first>
+      <h1 class="h split">Put the notch to work.</h1>
+      <p class="sub">That black strip at the top of your MacBook, now holding what's playing, today's plans, translation and notes.</p>
+    </div>
+    <div class="band e-snap" data-a="0.30" data-b="0.54" data-spread="0.45">
+      <p class="h split">The song, the week, a translation.</p>
+      <p class="sub">Click to open it, then just glance up.</p>
+    </div>
+    <div class="band e-blur" data-a="0.58" data-b="0.78">
+      <p class="h blurpair"><span class="soft" aria-hidden="true">Sharing your screen? One press first.</span><span class="sharp">Sharing your screen? One press first.</span></p>
+      <p class="sub">The clutter on your desktop disappears. Press again and it's back. Your files stay where they are.</p>
+    </div>
+    <div class="band e-settle" data-a="0.82" data-b="1" data-ramp="0.05" data-last>
+      <h2 class="h split">Free. Right now.</h2>
+      <p class="sub">Notarised by Apple on the Mac. There's a Windows version too.</p>
+      <div class="cta">
+        <a class="btn btn-accent" href="../downloads/Noki-0.1.2.zip" download><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Download for Mac<small>Free / 0.1.2</small></a>
+        
+        <a class="btn btn-quiet" href="#download"><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg>Windows version</a>
+      </div>
+    </div>
+
+    <div class="loader" role="status">
+      <svg class="ring" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-opacity=".2" stroke-width="3"/>
+        <circle class="ring-fill" cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="126" style="stroke-dashoffset:var(--ld,126)"/>
+      </svg>
+      <span class="sr-only">Loading the video</span>
+    </div>
+    <div class="cue" aria-hidden="true"><span>Scroll</span><svg class="i"><use href="#i-chevron-down"/></svg></div>
+  </div>
+</section>
+
+<!-- The same opening, composed as a still, for phones, portrait tablets and reduced motion. -->
+<section class="hero-static" aria-label="Put the notch to work.">
+  <figure class="hs-screen">
+    <img src="../assets/card.jpg" alt="Open it and one long card slides down. From left to right, here's what's on it." width="1583" height="396" fetchpriority="high">
   </figure>
-</header>
-
-<main>
-
-<section class="section">
-  <div class="wrap">
-    <h2>What it does</h2>
-    <div class="grid">
-
-      <article class="card">
-        <svg class="icon" aria-hidden="true"><use href="#i-music"/></svg>
-        <h3>Music</h3>
-        <p>What's playing shows up either side of the notch, with the artwork and a waveform. Press the waveform to pause and start again. Works with Music, Spotify and anything playing in a browser.</p>
-      </article>
-
-      <article class="card">
-        <svg class="icon" aria-hidden="true"><use href="#i-calendar-days"/></svg>
-        <h3>Calendar</h3>
-        <p>This week's dates and what's on that day. Swipe two fingers to move up to two weeks either way, and scroll a busy day.</p>
-      </article>
-
-      <article class="card">
-        <svg class="icon" aria-hidden="true"><use href="#i-languages"/></svg>
-        <h3>Translation</h3>
-        <p>Type and it translates as you go. Either side takes typing, and one tap swaps them. macOS does the translating on the device, so nothing you type leaves your Mac.</p>
-      </article>
-
-      <article class="card">
-        <svg class="icon" aria-hidden="true"><use href="#i-notebook-pen"/></svg>
-        <h3>Notes</h3>
-        <p>Write down whatever just came to mind. It saves as you type, and the notch stays open while you write.</p>
-      </article>
-
-      <article class="card">
-        <svg class="icon" aria-hidden="true"><use href="#i-layout-grid"/></svg>
-        <h3>Shortcuts</h3>
-        <p>Drop in the apps and files you reach for often and they become tiles. Anything in the Shortcuts app can go there too.</p>
-      </article>
-
-      <article class="card">
-        <svg class="icon" aria-hidden="true"><use href="#i-inbox"/></svg>
-        <h3>File tray</h3>
-        <p>Drag a file onto the notch and it waits there. Send it on with AirDrop, or drag it wherever it needs to go.</p>
-      </article>
-
+  <div class="hs-copy">
+    <h1 class="h">Put the notch to work.</h1>
+    <p class="sub">That black strip at the top of your MacBook, now holding what's playing, today's plans, translation and notes.</p>
+    <div class="cta">
+      <a class="btn btn-accent" href="../downloads/Noki-0.1.2.zip" download><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Download for Mac<small>Free / 0.1.2</small></a>
+      
+      <a class="btn btn-quiet" href="#download"><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg>Windows version</a>
     </div>
   </div>
 </section>
 
-<section class="section section-alt">
-  <div class="wrap split">
-    <div>
-      <svg class="icon" aria-hidden="true"><use href="#i-monitor-off"/></svg>
-      <h2>Clear the desktop in one press</h2>
-      <p>One press on the menu bar icon and the clutter on your desktop disappears. Handy before you share your screen or hand your Mac to someone. Press again and it's back. Nothing is deleted.</p>
-    </div>
-    <figure class="icon-shot">
-      <img src="../img/desktop-icon.png" alt="The menu bar icon. On the left, normal; on the right, while the desktop icons are hidden — the dots inside fade out." width="936" height="516" loading="lazy" decoding="async">
-      <figcaption>Left: showing. Right: hidden.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section">
+<!-- What it does: the real card, with its five parts numbered. -->
+<section class="sec features reveal" id="features">
   <div class="wrap">
-    <h2>The first time you open it</h2>
-    <ol class="steps">
-      <li>
-        <h3>Put it in Applications</h3>
-        <p>Move the downloaded Noki into your Applications folder before you open it.</p>
-      </li>
-      <li>
-        <h3>Grant two permissions</h3>
-        <p><strong>Accessibility</strong> (to show volume and brightness, and to use the media keys) and <strong>Calendar</strong> (to show what's on). Both have a Grant button in the settings window. Skip the ones for features you won't use.</p>
-      </li>
-      <li>
-        <h3>Point at the notch</h3>
-        <p>It can open on hover or on a click — your choice. Right-click the notch to reach the settings.</p>
-      </li>
+    <p class="kicker">What it does</p>
+    <h2 class="title">The notch you wrote off, now on your side.</h2>
+    <p class="lede">Open it and one long card slides down. From left to right, here's what's on it.</p>
+  </div>
+  <figure class="anatomy">
+    <div class="anatomy-img">
+      <img src="../assets/card.jpg" alt="" width="1583" height="396" loading="lazy" decoding="async">
+      <span class="pin" style="--x:11.2%;--y:23%">1</span>
+      <span class="pin" style="--x:48%;--y:39%">2</span>
+      <span class="pin" style="--x:75.5%;--y:50%">3</span>
+      <span class="pin" style="--x:88.6%;--y:12%">4</span>
+      <span class="pin" style="--x:88.6%;--y:51.5%">5</span>
+    </div>
+    <svg class="rule" viewBox="0 0 1000 12" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 6 H1000" pathLength="1"/>
+      <path class="tick" d="M112 0 V12" pathLength="1"/><path class="tick" d="M480 0 V12" pathLength="1"/>
+      <path class="tick" d="M755 0 V12" pathLength="1"/><path class="tick" d="M886 0 V12" pathLength="1"/>
+    </svg>
+    <ol class="parts">
+      <li><svg class="i" aria-hidden="true"><use href="#i-music"/></svg><h3>What's playing</h3><p>Music, Spotify, anything in a browser. Artwork, where you are in the song, back and next.</p></li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-calendar-days"/></svg><h3>This week</h3><p>Swipe two fingers for the weeks either side. A busy day scrolls on the spot.</p></li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-languages"/></svg><h3>Translation</h3><p>Type and it translates on the spot. It happens on your Mac, so nothing you type leaves it.</p></li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-inbox"/></svg><h3>A place for files</h3><p>Park a file in the notch. Send it on with AirDrop from there.</p></li>
+      <li><svg class="i" aria-hidden="true"><use href="#i-monitor-off"/></svg><h3>Hide the desktop</h3><p>Each press hides the desktop icons or brings them back.</p></li>
     </ol>
+  </figure>
+</section>
+
+<!-- The one interactive moment: clear a cluttered desktop with the same button Noki puts in the menu bar. -->
+<section class="sec try reveal" id="try">
+  <div class="wrap try-grid">
+    <div class="try-copy">
+      <p class="kicker">Try it</p>
+      <h2 class="title">Go on, press it.</h2>
+      <p class="lede">The little button above does what Noki's menu bar button does.</p>
+      <p class="try-status" aria-live="polite" data-done="All clear. Press again to bring them back." data-back="They're back."></p>
+    </div>
+    <div class="desk">
+      <div class="desk-bar">
+        <span class="desk-apple" aria-hidden="true"></span>
+        <span class="desk-notch" aria-hidden="true"></span>
+        <button class="desk-toggle" type="button" aria-pressed="false" data-hide="Hide the desktop icons" data-show="Bring the desktop icons back" aria-label="Hide the desktop icons">
+          <svg viewBox="0 0 22 18" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="19" height="15" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <g class="dots" fill="currentColor">
+              <circle cx="16" cy="5.2" r="1.3"/><circle cx="16" cy="8.4" r="1.3"/><circle cx="16" cy="11.6" r="1.3"/><circle cx="16" cy="14.2" r="1.1"/>
+              <circle cx="12.4" cy="5.2" r="1.3"/><circle cx="12.4" cy="8.4" r="1.3"/><circle cx="12.4" cy="11.6" r="1.3"/>
+            </g>
+          </svg>
+        </button>
+        <span class="desk-clock" aria-hidden="true">9:41</span>
+      </div>
+      <svg class="hint" viewBox="0 0 230 70" aria-hidden="true">
+        <path d="M6 60 C70 64, 160 50, 214 8" pathLength="1"/>
+        <path class="head" d="M199 9 L214 8 L210 23" pathLength="1"/>
+      </svg>
+      <span class="hint-label" aria-hidden="true">Press here</span>
+      <ul class="desk-icons" aria-hidden="true">
+        <li class="ico doc"><i></i><span>Proposal.pdf</span></li>
+        <li class="ico pic p1"><i></i><span>Screenshot 9-27.png</span></li>
+        <li class="ico dir"><i></i><span>Trip photos</span></li>
+        <li class="ico doc sheet"><i></i><span>Quote.xlsx</span></li>
+        <li class="ico doc"><i></i><span>Groceries.txt</span></li>
+        <li class="ico dir"><i></i><span>Read later</span></li>
+        <li class="ico dir"><i></i><span>Work</span></li>
+        <li class="ico pic p2"><i></i><span>Voice memo.m4a</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="section section-alt">
-  <div class="wrap">
-    <h2>What you need</h2>
-    <dl class="specs">
-      <div><dt>macOS</dt><dd>14 (Sonoma) or later</dd></div>
-      <div><dt>Mac</dt><dd>Apple Silicon (M1 or later)</dd></div>
-      <div><dt>A notch</dt><dd>Not required. Without one it sits at the top edge.</dd></div>
-      <div><dt>Price</dt><dd>Free for now</dd></div>
-    </dl>
-    <p class="fineprint">Noki is notarised by Apple. What's playing and what's on your calendar are handled on this Mac and never sent anywhere. When a new version is out, the app tells you itself.</p>
+<!-- Only what you use: a mirror of the section above, switches first. -->
+<section class="sec only reveal">
+  <div class="wrap only-grid">
+    <ul class="switches">
+      <li><span>Music</span><b class="sw on"><i></i><em>On</em></b></li>
+      <li><span>Calendar</span><b class="sw on"><i></i><em>On</em></b></li>
+      <li><span>Translation</span><b class="sw"><i></i><em>Off</em></b></li>
+      <li><span>Notes</span><b class="sw on"><i></i><em>On</em></b></li>
+      <li><span>File tray</span><b class="sw"><i></i><em>Off</em></b></li>
+      <li><span>Shortcuts</span><b class="sw on"><i></i><em>On</em></b></li>
+      <li><span>Volume and brightness</span><b class="sw on"><i></i><em>On</em></b></li>
+    </ul>
+    <div class="only-copy">
+      <p class="kicker">Settings</p>
+      <h2 class="title">Put away what you don't use.</h2>
+      <p class="lede">You don't have to use all of it. Each feature switches off on its own, and what's off stays out of the notch.</p>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<!-- Light: measured numbers only. -->
+<section class="sec proof reveal">
   <div class="wrap">
-    <h2>For Windows</h2>
-    <p class="section-body">On a Windows PC the same notch sits at the top centre of the screen. It has music, notes and the desktop toggle; the calendar, translation, shortcuts and file tray are Mac-only for now.</p>
-    <dl class="specs">
-      <div><dt>Windows</dt><dd>10 (version 2004 or later) or 11, 64-bit</dd></div>
-      <div><dt>Price</dt><dd>Free for now</dd></div>
+    <p class="kicker">Light</p>
+    <h2 class="title">It's always running, so it has to be light.</h2>
+    <dl class="facts">
+      <div><dt>CPU while waiting</dt><dd>0.00%</dd><small>30-second average, MacBook Air M4</small></div>
+      <div><dt>Memory</dt><dd>54 MB</dd></div>
+      <div><dt>Download</dt><dd>3 MB</dd></div>
+      <div><dt>Checked by Apple</dt><dd class="word"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg>Notarised</dd></div>
     </dl>
-    
-    <a class="button button-quiet" href="../downloads/Noki-Windows-0.1.3.zip" download>
-      Download for Windows
-      <span class="button-note">Free / 0.1.3</span>
-    </a>
-    <p class="fineprint win-note">If Windows says it protected your PC the first time you open it, choose More info, then Run anyway.</p>
-    
-    
+    <p class="privacy"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>What's playing and what's on your calendar stay on your Mac and are never sent anywhere. Translation happens on your Mac too.</p>
+  </div>
+</section>
+
+<section class="sec faq reveal" id="faq">
+  <div class="wrap narrow">
+    <h2 class="title">Questions</h2>
+    <details><summary>Is it really free?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>Yes, for now. No account needed either.</p></details>
+    <details><summary>It's not on the App Store. Is it safe?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>It's notarised by Apple. When you open the download, macOS checks it and lets it through.</p></details>
+    <details><summary>Will it slow my Mac down?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>Measured while waiting, its CPU use was 0.00% (30-second average on a MacBook Air M4). When the pointer is nowhere near the notch, it's barely doing anything.</p></details>
+    <details><summary>Is my music, calendar or translated text sent anywhere?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>No. Your plans are read from the calendar on your Mac, and macOS does the translating on your Mac.</p></details>
+    <details><summary>Do I have to reinstall it for every update?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>No. When a new version is out, Noki tells you and updates itself.</p></details>
+    <details><summary>Does it work on a Mac without a notch?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>Yes. It sits at the top centre of the screen.</p></details>
+    <details><summary>What does the Windows version do?<svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary><p>What's playing and its controls, notes, and hiding the desktop icons. The calendar, translation, shortcuts and file tray are Mac-only for now.</p></details>
+  </div>
+</section>
+
+<!-- The one call to action everything above leads to. -->
+<section class="sec download reveal" id="download">
+  <div class="wrap">
+    <img class="dl-icon" src="../img/icon.png" alt="" width="112" height="112" loading="lazy">
+    <p class="kicker">Download</p>
+    <h2 class="title">Start using the notch today.</h2>
+    <p class="lede">Download it, drop it into Applications, open it. That's it.</p>
+    <div class="dl-row">
+      <div class="dl-col">
+        <a class="btn btn-accent btn-lg" href="../downloads/Noki-0.1.2.zip" download><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg>Download for Mac<small>Free / 0.1.2</small></a>
+        
+        <p class="req">macOS 14 or later, Apple silicon (M1 or later)</p>
+      </div>
+      <div class="dl-col">
+        <a class="btn btn-quiet btn-lg" href="../downloads/Noki-Windows-0.1.3.zip" download><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg>Windows version<small>Free / 0.1.3</small></a>
+        
+        <p class="req">Windows 10 (version 2004 or later) or 11, 64-bit</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li>Move it into Applications</li>
+      <li>Allow Accessibility and Calendar when it asks the first time</li>
+      <li>Click the notch</li>
+    </ol>
+    <p class="win-note">If Windows says it protected your PC, choose More info, then Run anyway.</p>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <p class="mark">Noki</p>
-    <p class="small">Noki (軒) — the eaves: the part of a roof that reaches out past the wall.</p>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <p class="foot-mark"><img src="../img/icon.png" alt="" width="28" height="28" loading="lazy">Noki</p>
+    <p class="foot-note">Noki (軒): the eaves, the part of a roof that reaches out past the wall.</p>
+    <p class="foot-note">Music in the video: Sharou, “2:23 AM”</p>
+    <p class="foot-links"><a href="/" hreflang="ja">日本語</a>
+    <a href="/en/" hreflang="en" aria-current="true">English</a> <a href="#main">Back to top</a></p>
   </div>
 </footer>
 

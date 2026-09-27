@@ -5,14 +5,14 @@
     <channel>
         <title>Noki</title>
         <item>
-            <title>0.1.1</title>
-            <pubDate>Sun, 27 Sep 2026 14:39:39 +0900</pubDate>
+            <title>0.1.2</title>
+            <pubDate>Sun, 27 Sep 2026 14:49:54 +0900</pubDate>
             <link>https://noki-app.github.io/</link>
-            <sparkle:version>2</sparkle:version>
-            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://noki-app.github.io/downloads/Noki-0.1.1.zip" length="3071297" type="application/octet-stream" sparkle:edSignature="df8OYeRydImDnn9oi3dGp8npA39XUTlzTQawqGhR8xZBQAlupTBLIPxjSNyJSd8yCd168rsnCWQQBeC1w+QfBg=="/>
+            <enclosure url="https://noki-app.github.io/downloads/Noki-0.1.2.zip" length="3071863" type="application/octet-stream" sparkle:edSignature="4OkLQzzRIK26irBfQ9wdFt6Z7MayoEH4dwkyd77a7GylFBb8uiOJqB9cx5yJWnMmmVxNfshnH8HREw2cglTACA=="/>
         </item>
     </channel>
 </rss>
